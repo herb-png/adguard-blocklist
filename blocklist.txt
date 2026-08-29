@@ -1,16 +1,16 @@
 ! Title: SNS / Video / Game / Streaming / Forum Blocklist
 ! Description: Large AdGuard DNS filter list converted from exact hosts records
-! Version: 20260824
-! Last modified: 2026-08-24
+! Version: 20260828
+! Last modified: 2026-08-28
 ! Syntax: AdGuard DNS filter (||domain^)
 ! Original unique exact hostnames: 81629
-! Rules after consolidation: 3101
+! Rules after consolidation: 3089
 ! Duplicate/www aliases removed: 1584
 ! Subdomains covered by an existing parent rule removed: 76944
 !
 ! A parent rule such as ||example.com^ also blocks every subdomain of example.com.
-! Shared CDN/cloud parent domains were not introduced merely to shorten the list.
-! Only explicit source domains and www-normalized site roots were consolidated.
+! Shared CDN/cloud and cross-service vendor parent domains are not blocked.
+! Tenant-specific infrastructure hostnames are retained only when dedicated to a blocked service.
 !
 ! =============================================================================
 ! CATEGORY: SNS・写真・短文投稿
@@ -448,7 +448,7 @@
 !
 ! =============================================================================
 ! CATEGORY: メッセージ・音声チャット・ソーシャルコミュニティ
-! Rules in category: 113
+! Rules in category: 111
 ! =============================================================================
 !
 ! --- Discord (26 rules) ---
@@ -479,7 +479,7 @@
 ||discordstatus.com^
 ||watchanimeattheoffice.com^
 !
-! --- LINE (18 rules) ---
+! --- LINE core / games / video (12 rules) ---
 ||gcld-line.com^
 ||lin.ee^
 ||line-apps-beta.com^
@@ -490,13 +490,7 @@
 ||line.biz^
 ||line.me^
 ||line.naver.jp^
-||linecorp.com^
-||linefriends.com^
-||linefriends.com.tw^
 ||linegame.jp^
-||linemobile.com^
-||linemyshop.com^
-||lineshoppingseller.com^
 ||linetv.tw^
 !
 ! --- Telegram (17 rules) ---
@@ -534,9 +528,13 @@
 ||wx.qq.com^
 ||wx2.qq.com^
 !
-! --- KakaoTalk (2 rules) ---
-||kakao.com^
-||kgslb.com^
+! --- KakaoTalk, service-specific only (6 rules) ---
+||apps.kakao.com^
+||kakaotalk.com^
+||katalk.kakao.com^
+||pf.kakao.com^
+||talk-apps.kakao.com^
+||talk.kakao.com^
 !
 ! --- Viber (1 rules) ---
 ||viber.com^
@@ -596,13 +594,10 @@
 !
 ! =============================================================================
 ! CATEGORY: 動画・ライブ・音楽・ポッドキャスト配信
-! Rules in category: 496
+! Rules in category: 487
 ! =============================================================================
 !
-! --- YouTube / YouTube Music / Google Video (175 rules) ---
-||ggpht.cn^
-||ggpht.com^
-||googlevideo.com^
+! --- YouTube / YouTube Music (172 rules) ---
 ||wide-youtube.l.google.com^
 ||withyoutube.com^
 ||youtu.be^
@@ -904,7 +899,7 @@
 ||hulu.jp^
 ||lemino.docomo.ne.jp^
 ||nhk-ondemand.jp^
-||nhk.jp^
+||plus.nhk.jp^
 ||nico.ms^
 ||nicovideo.cdn.nimg.jp^
 ||nicovideo.jp^
@@ -937,8 +932,7 @@
 ||twitcasting.tv^
 ||younow.com^
 !
-! --- Netflix (22 rules) ---
-||fast.com^
+! --- Netflix (21 rules) ---
 ||netflix.ca^
 ||netflix.com^
 ||netflix.net^
@@ -1086,7 +1080,7 @@
 ||philo.com^
 ||plus.espn.com^
 ||retrocrush.tv^
-||roku.com^
+||therokuchannel.roku.com^
 ||roku.tv^
 ||sling.com^
 ||tubi.tv^
@@ -1094,13 +1088,8 @@
 ||vudu.com^
 ||xumo.com^
 !
-! --- Apple TV+ / Apple Music / Podcasts (7 rules) ---
+! --- Apple TV+ service-specific endpoints; Apple Music/App Store/Podcasts allowed (2 rules) ---
 ||hls-svod-aoc-ve.itunes.g.aaplimg.com^
-||itunes.apple.com^
-||itunes.com^
-||music.apple.com^
-||mzstatic.com^
-||podcasts.apple.com^
 ||tv.apple.com^
 !
 ! --- Spotify (13 rules) ---
@@ -1171,7 +1160,7 @@
 !
 ! =============================================================================
 ! CATEGORY: ゲーム機・ストア・メーカー・オンラインゲーム
-! Rules in category: 2000
+! Rules in category: 1999
 ! =============================================================================
 !
 ! --- Steam / Valve (37 rules) ---
@@ -3127,7 +3116,7 @@
 ||subnauticagame.com^
 ||unknownworlds.com^
 !
-! --- Game stores and subscription services (10 rules) ---
+! --- Game stores and subscription services (9 rules) ---
 ||cdkeys.com^
 ||eneba.com^
 ||fanatical.com^
@@ -3135,7 +3124,6 @@
 ||greenmangaming.com^
 ||humblebundle.com^
 ||itch.io^
-||my.account.sony.com^
 ||nuuvem.com^
 ||xbox.com^
 !
@@ -3332,7 +3320,7 @@
 ||slashdot.org^
 ||squabbles.io^
 ||tildes.net^
-||ycombinator.com^
+||news.ycombinator.com^
 !
 ! --- General forums and communities (18 rules) ---
 ||avforums.com^
@@ -3372,3 +3360,4 @@
 ||wikidot.com^
 ||wikiwand.com^
 !
+
